@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import { AppRoutes } from '../App'
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router'
 
 const LoginPage = () => {
@@ -7,9 +6,9 @@ const LoginPage = () => {
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
 
-  useEffect(() => {
-    if (!email) navigate('/')
-  }, [email])
+  // useEffect(() => {
+  //   if (!email) navigate('/')
+  // }, [email])
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -47,9 +46,7 @@ const LoginPage = () => {
       <div className=" flex gap-1">
         <p className=" bg-amber-100 p-1 rounded-2xl"> Нет аккаунта?</p>
         <p className=" rounded-2xl bg-green-100 p-1">
-          <Link to={`${AppRoutes.AUTH}/${AppRoutes.REG}`}>
-            Зарегистрируйтесь
-          </Link>
+          <Link to={'/auth/register'}>Зарегистрируйтесь</Link>
         </p>
       </div>
     </div>
@@ -57,25 +54,3 @@ const LoginPage = () => {
 }
 
 export default LoginPage
-
-// import { AppRoutes } from '../App'
-// import { Link } from 'react-router'
-
-// const LoginPage = () => {
-//   return (
-//     <div>
-//       <h3>Форма входа</h3>
-//       <form>
-//         <input type="email" placeholder="Email" />
-//         <input type="password" placeholder="Пароль" />
-//         <button>Войти</button>
-//       </form>
-//       <p>
-//         Нет аккаунта?{''}
-//         <Link to={`${AppRoutes.AUTH}/${AppRoutes.REG}`}>Зарегистрируйтесь</Link>
-//       </p>
-//     </div>
-//   )
-// }
-
-// export default LoginPage
