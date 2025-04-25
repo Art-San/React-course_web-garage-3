@@ -1,11 +1,16 @@
-import AppRoutes from './components/AppRoutes'
+import Home from './pages/HomePage'
+import { Routes, Route } from 'react-router'
+import { UserPage } from './pages/UserPage'
+import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
   return (
-    <>
-      <h1>Приложение</h1>
-      <AppRoutes />
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+
+      <Route path="/user/:userId" element={<UserPage />} />
+      <Route path={'*'} element={<NotFoundPage />} />
+    </Routes>
   )
 }
 

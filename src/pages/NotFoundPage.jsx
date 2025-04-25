@@ -6,7 +6,6 @@ const NotFoundPage = () => {
       <h1>Ничего не найдено. Ошибка 404</h1>
       <Link to={'/'}>На главную</Link>
       <br />
-      <Link to={'/about'}>О компании</Link>
     </div>
   )
 }

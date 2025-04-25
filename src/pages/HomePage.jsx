@@ -1,14 +1,12 @@
-import { Link } from 'react-router'
-
-const HomePage = () => {
+const Home = () => {
   return (
     <div>
-      <h1>Главная страница</h1>
-      <Link to={'/about'}>О компании</Link>
-      <br />
-      <Link to={'/auth'}>Войти</Link>
+      <h1>Добро пожаловать!</h1>
+      <p>Это простое приложение с динамическими страницами пользователей</p>
+      <p>Попробуйте перейти по ссылкам выше или введите в адресной строке:</p>
+      <code>/user/любое число</code>
     </div>
   )
 }
 
-export default HomePage
+export default Home
