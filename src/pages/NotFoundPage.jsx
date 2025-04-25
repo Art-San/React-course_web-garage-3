@@ -1,13 +1,10 @@
 import { Link } from 'react-router'
 
-const NotFoundPage = () => {
+export default function NotFoundPage() {
   return (
     <div>
-      <h1>Ничего не найдено. Ошибка 404</h1>
-      <Link to={'/'}>На главную</Link>
-      <br />
+      <h1>Ничего не найдено :(</h1>
+      <Link to={'/'}>Главная</Link>
     </div>
   )
 }
-
-export default NotFoundPage
