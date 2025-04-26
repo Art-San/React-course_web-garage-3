@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { Link } from 'react-router'
+import { Link, useLocation, useNavigate } from 'react-router'
+import { useEffect } from 'react'
 
 const StyledLink = styled(Link)`
   color: blue;
@@ -13,10 +14,21 @@ const StyledLink = styled(Link)`
 `
 
 const Navbar = () => {
+  const isAuth = true
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!isAuth && location.pathname.startsWith('/about')) {
+      navigate('/auth')
+    }
+  }, [isAuth, location.pathname, navigate])
+
   return (
-    <nav style={{ backgroundColor: 'gray' }}>
+    <nav className=" h-16 bg-amber-200 flex items-center">
       <StyledLink to="/">Главная</StyledLink>
       <StyledLink to="/about">О нас</StyledLink>
+      <StyledLink to="/contacts">Контакты</StyledLink>
       <StyledLink to="/auth">Войти</StyledLink>
     </nav>
   )
